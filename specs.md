@@ -13,7 +13,7 @@ This money tracking app (from now simply "app") has to track **only the expenses
 1. an input box taking the amount of money spent
 2. an input box taking the reason of the expense
 3. an input box for category tag in order to classify the expense. 
-4. an inpu box for the date 
+4. an input box for the date (if not specified, the app takes the current date automatically) 
 5. a series of preset category of expenses like cigarettes...
 6. a button that shows all the expenses until then recorded with the total amount of money spent and the total amount of money spent for each category. 
 
