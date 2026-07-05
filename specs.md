@@ -19,8 +19,17 @@ The app will show three possibilities:
 ## Backend
 **Python** is the language chosen for the backend of this application, specifically the APIs will be managed by **FastApi framework** and the app is backed by a sql-type database (**Mariadb**)
 
-The app will allow to a user to identify themselves, even if for adding a record on database about an expense it is not required to be logged in: the login is **necessary** only if the user wants to have access on the controll pannel. 
 
-The database structure is simple, it contains:
+The app first will ask to log in or sign in, this is in case someone else wants to use it. **Note that the registration doesn't create new tables**, the tables for the record is unique, the record is semply associated with the correspondent user
+
+The database structure is simple:
 - table 1: table "users" to keep track of the users 
-- table 2: table "expenses_nameuser"
+---------------------------------------------
+|**Columns**: id (pk), name, email, password    |
+--------------------------------------------- 
+        
+- table 2: table "expenses"
+---------------------------------------------------------------------------------
+|**Columns**: id_expense, user_id_associated, reason, category, amount, date    |
+---------------------------------------------------------------------------------
+        
