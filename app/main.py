@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Depends, status
+from fastapi.middleware.cors import CORSMiddleware
 
 from sqlalchemy.orm import Session
 
@@ -23,6 +24,31 @@ from config import settings
 from auth import current_user
 
 app = FastAPI()
+
+
+app = FastAPI()
+
+# 1. Definisci la tua "Lista VIP" (le origini del tuo frontend)
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:5501", # Sostituisci questa con la porta su cui gira il tuo JS
+    # "http://localhost:8000", # Esempio
+    # "*", # NOTA: In fase di sviluppo puro puoi usare "*" per far entrare chiunque, ma in produzione è pericolosissimo.
+]
+
+# 2. Aggiungi il buttafuori (Middleware) che controlla la lista VIP
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"], # Permette tutti i metodi: GET, POST, PUT, DELETE, ecc.
+    allow_headers=["*"], # Permette tutti gli header, incluso il tuo "Content-Type" e l'autenticazione
+)
+
+
+
+
+
 models.Base.metadata.create_all(bind=engine)
 
 

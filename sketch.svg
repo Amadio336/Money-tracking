@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showguides="true"
      inkscape:zoom="0.089308011"
-     inkscape:cx="2301.0254"
-     inkscape:cy="2026.6939"
+     inkscape:cx="3622.2954"
+     inkscape:cy="3235.9919"
      inkscape:window-width="1332"
      inkscape:window-height="699"
      inkscape:window-x="1095"
@@ -47,486 +47,433 @@
      id="layer1">
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
-       id="rect1"
-       width="313.46466"
-       height="514.18945"
-       x="527.47595"
-       y="1422.9608"
-       ry="38.755093" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
-       id="rect1-10"
-       width="313.46466"
-       height="514.18945"
-       x="102.73698"
-       y="801.11823"
-       ry="38.755093" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
        id="rect1-1"
        width="313.46466"
        height="514.18945"
-       x="536.53082"
-       y="194.84123"
+       x="911.69751"
+       y="135.88713"
        ry="38.755093" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
        id="rect1-1-8"
        width="313.46466"
        height="514.18945"
-       x="536.53082"
-       y="801.11823"
+       x="1011.8044"
+       y="771.52826"
        ry="38.755093" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
        id="rect1-1-8-0"
        width="313.46466"
        height="514.18945"
-       x="965.3208"
-       y="801.11823"
+       x="1447.1409"
+       y="771.7901"
        ry="38.755093" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
        id="rect1-1-5"
        width="313.46466"
        height="514.18945"
-       x="906.4375"
-       y="194.84123"
+       x="1281.6042"
+       y="135.88713"
        ry="38.755093" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
        id="rect1-1-5-0"
        width="313.46466"
        height="514.18945"
-       x="1280.5443"
-       y="189.15974"
+       x="1655.7111"
+       y="130.20564"
        ry="38.755093" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
        id="rect1-1-5-0-7"
        width="313.46466"
        height="514.18945"
-       x="1622.3246"
-       y="194.84123"
+       x="1997.4912"
+       y="135.88713"
        ry="38.755093" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
-       id="rect1-3"
-       width="168.06245"
-       height="83.884933"
-       x="600.177"
-       y="1638.113"
-       ry="6.3225112" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.690886;stroke-dasharray:none"
        id="rect1-3-2"
        width="168.06245"
        height="147.97243"
-       x="609.23193"
-       y="303.05869"
+       x="984.39862"
+       y="244.1046"
        ry="11.152864" />
-    <text
-       xml:space="preserve"
-       style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="647.96228"
-       y="1687.2468"
-       id="text1"><tspan
-         sodipodi:role="line"
-         id="tspan1"
-         style="font-size:19.7556px;stroke-width:2"
+    <g
+       id="g1"
+       transform="translate(-423.65087,-622.14464)">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
+         id="rect1"
+         width="313.46466"
+         height="514.18945"
+         x="527.47595"
+         y="1422.9608"
+         ry="38.755093" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
+         id="rect1-3"
+         width="168.06245"
+         height="83.884933"
+         x="600.177"
+         y="1638.113"
+         ry="6.3225112" />
+      <text
+         xml:space="preserve"
+         style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
          x="647.96228"
-         y="1687.2468">ACCEDI</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
-       id="rect1-3-4"
-       width="168.06245"
-       height="83.884933"
-       x="175.4381"
-       y="864.09149"
-       ry="6.3225112" />
-    <text
-       xml:space="preserve"
-       style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="223.22343"
-       y="913.22528"
-       id="text1-4"><tspan
-         sodipodi:role="line"
-         id="tspan1-7"
-         style="font-size:19.7556px;stroke-width:2"
-         x="223.22343"
-         y="913.22528">Inserisci</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
-       id="rect1-3-4-5"
-       width="168.06245"
-       height="83.884933"
-       x="175.4381"
-       y="1001.3915"
-       ry="6.3225112" />
-    <text
-       xml:space="preserve"
-       style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="223.22343"
-       y="1050.5253"
-       id="text1-4-9"><tspan
-         sodipodi:role="line"
-         id="tspan1-7-6"
-         style="font-size:19.7556px;stroke-width:2"
-         x="223.22343"
-         y="1050.5253">Rapido</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="223.22337"
-       y="1194.0571"
-       id="text1-4-9-5"><tspan
-         sodipodi:role="line"
-         id="tspan1-7-6-9"
-         style="font-size:19.7556px;stroke-width:2"
-         x="223.22337"
-         y="1194.0571">Pannello </tspan></text>
+         y="1687.2468"
+         id="text1"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="font-size:19.7556px;stroke-width:2"
+           x="647.96228"
+           y="1687.2468">ACCEDI</tspan></text>
+    </g>
     <text
        xml:space="preserve"
        style="font-size:41.8343px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:1.64702;stroke-dasharray:none"
-       x="763.75732"
-       y="322.90186"
+       x="1223.5131"
+       y="274.79453"
        id="text1-9"
        transform="scale(0.81601311,1.2254705)"><tspan
          sodipodi:role="line"
          style="font-size:41.8343px;stroke-width:1.64702"
-         x="763.75732"
-         y="322.90186"
+         x="1223.5131"
+         y="274.79453"
          id="tspan2">€ 50.00</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.488352;stroke-dasharray:none"
        id="rect1-3-2-9"
        width="168.26498"
        height="73.843307"
-       x="981.13745"
-       y="216.53922"
+       x="1356.3042"
+       y="157.5851"
        ry="5.565661" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.59758;stroke-dasharray:none"
        id="rect1-3-2-9-1"
        width="252.32687"
        height="73.734077"
-       x="937.00635"
-       y="372.22162"
+       x="1312.1731"
+       y="313.26749"
        ry="5.5574284" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6"
        width="109.69809"
        height="55.994694"
-       x="935.10718"
-       y="491.40268"
+       x="1310.2739"
+       y="432.44858"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-4"
        width="109.69809"
        height="55.994694"
-       x="1079.7623"
-       y="491.40268"
+       x="1454.9291"
+       y="432.44858"
        ry="4.2203889" />
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="557.67444"
-       y="248.45662"
+       x="932.84113"
+       y="189.50249"
        id="text1-2"><tspan
          sodipodi:role="line"
          id="tspan1-6"
          style="font-size:19.7556px;stroke-width:2"
-         x="557.67444"
-         y="248.45662">Quanto hai speso?</tspan></text>
+         x="932.84113"
+         y="189.50249">Quanto hai speso?</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="927.86572"
-       y="351.72437"
+       x="1303.0325"
+       y="292.77023"
        id="text1-2-4"><tspan
          sodipodi:role="line"
          id="tspan1-6-5"
          style="font-size:19.7556px;stroke-width:2"
-         x="927.86572"
-         y="351.72437">Per cosa?</tspan></text>
+         x="1303.0325"
+         y="292.77023">Per cosa?</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="1316.5374"
-       y="450.51007"
+       x="1691.7041"
+       y="391.55594"
        id="text1-2-4-2"><tspan
          sodipodi:role="line"
          id="tspan1-6-5-7"
          style="font-size:19.7556px;stroke-width:2"
-         x="1316.5374"
-         y="450.51007">Categoria?</tspan></text>
+         x="1691.7041"
+         y="391.55594">Categoria?</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:41.8343px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:1.64702;stroke-dasharray:none"
-       x="1227.0073"
-       y="222.05565"
+       x="1686.7631"
+       y="173.94832"
        id="text1-9-0"
        transform="scale(0.81601311,1.2254705)"><tspan
          sodipodi:role="line"
          style="font-size:41.8343px;stroke-width:1.64702"
-         x="1227.0073"
-         y="222.05565"
+         x="1686.7631"
+         y="173.94832"
          id="tspan2-6">€ 50.00</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.488352;stroke-dasharray:none"
        id="rect1-3-2-9-9"
        width="168.26498"
        height="73.843307"
-       x="1353.1442"
-       y="216.53922"
+       x="1728.3109"
+       y="157.5851"
        ry="5.565661" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.488352;stroke-dasharray:none"
        id="rect1-3-2-9-9-6"
        width="168.26498"
        height="73.843307"
-       x="1353.1442"
-       y="322.14105"
+       x="1728.3109"
+       y="263.18692"
        ry="5.565661" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.488352;stroke-dasharray:none"
        id="rect1-3-2-9-9-6-0"
        width="168.26498"
        height="73.843307"
-       x="1035.7072"
-       y="864.33569"
+       x="1517.5272"
+       y="835.00751"
        ry="5.565661" />
     <text
        xml:space="preserve"
        style="font-size:41.8343px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:1.64702;stroke-dasharray:none"
-       x="1698.6465"
-       y="222.05565"
+       x="2158.4023"
+       y="173.94832"
        id="text1-9-0-2"
        transform="scale(0.81601311,1.2254705)"><tspan
          sodipodi:role="line"
          style="font-size:41.8343px;stroke-width:1.64702"
-         x="1698.6465"
-         y="222.05565"
+         x="2158.4023"
+         y="173.94832"
          id="tspan2-6-0">€ 50.00</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect3"
        width="109.69809"
        height="55.994694"
-       x="935.10718"
-       y="578.33978"
+       x="1310.2739"
+       y="519.38568"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect4"
        width="109.69809"
        height="55.994694"
-       x="1079.7623"
-       y="578.33978"
+       x="1454.9291"
+       y="519.38568"
        ry="4.2203889" />
     <text
        xml:space="preserve"
        style="font-size:11.2889px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="964.12341"
-       y="522.5144"
+       x="1339.2902"
+       y="463.56027"
        id="text4"><tspan
          sodipodi:role="line"
          id="tspan4"
          style="font-size:11.2889px;fill:#000000;stroke:none;stroke-width:2"
-         x="964.12341"
-         y="522.5144">Sigarette</tspan></text>
+         x="1339.2902"
+         y="463.56027">Sigarette</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-6"
        width="109.69809"
        height="55.994694"
-       x="565.78149"
-       y="869.21832"
+       x="1047.6016"
+       y="839.8902"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-4-4"
        width="109.69809"
        height="55.994694"
-       x="710.43652"
-       y="869.21832"
+       x="1192.2566"
+       y="839.8902"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect3-3"
        width="109.69809"
        height="55.994694"
-       x="565.78149"
-       y="956.15546"
+       x="1047.6016"
+       y="926.82733"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect4-3"
        width="109.69809"
        height="55.994694"
-       x="710.43652"
-       y="956.15546"
+       x="1192.2566"
+       y="926.82733"
        ry="4.2203889" />
     <text
        xml:space="preserve"
        style="font-size:11.2889px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="594.79773"
-       y="900.33002"
+       x="1076.6178"
+       y="871.00189"
        id="text4-3"><tspan
          sodipodi:role="line"
          id="tspan4-8"
          style="font-size:11.2889px;fill:#000000;stroke:none;stroke-width:2"
-         x="594.79773"
-         y="900.33002">Sigarette</tspan></text>
+         x="1076.6178"
+         y="871.00189">Sigarette</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-6-8"
        width="109.69809"
        height="55.994694"
-       x="565.78149"
-       y="1058.3846"
+       x="1047.6016"
+       y="1029.0564"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-4-4-8"
        width="109.69809"
        height="55.994694"
-       x="710.43652"
-       y="1058.3846"
+       x="1192.2566"
+       y="1029.0564"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect3-3-9"
        width="109.69809"
        height="55.994694"
-       x="565.78149"
-       y="1145.3217"
+       x="1047.6016"
+       y="1115.9934"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect4-3-7"
        width="109.69809"
        height="55.994694"
-       x="710.43652"
-       y="1145.3217"
+       x="1192.2566"
+       y="1115.9934"
        ry="4.2203889" />
     <text
        xml:space="preserve"
        style="font-size:11.2889px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="594.79773"
-       y="1089.4962"
+       x="1076.6178"
+       y="1060.168"
        id="text4-3-7"><tspan
          sodipodi:role="line"
          id="tspan4-8-6"
          style="font-size:11.2889px;fill:#000000;stroke:none;stroke-width:2"
-         x="594.79773"
-         y="1089.4962">Sigarette</tspan></text>
+         x="1076.6178"
+         y="1060.168">Sigarette</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-0"
        width="109.69809"
        height="55.994694"
-       x="1312.1765"
-       y="491.40268"
+       x="1687.3433"
+       y="432.44858"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect1-3-2-9-1-6-4-6"
        width="109.69809"
        height="55.994694"
-       x="1456.8318"
-       y="491.40268"
+       x="1831.9985"
+       y="432.44858"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect3-1"
        width="109.69809"
        height="55.994694"
-       x="1312.1765"
-       y="578.33972"
+       x="1687.3433"
+       y="519.38562"
        ry="4.2203889" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.343363;stroke-dasharray:none"
        id="rect4-5"
        width="109.69809"
        height="55.994694"
-       x="1456.8318"
-       y="578.33972"
+       x="1831.9985"
+       y="519.38562"
        ry="4.2203889" />
     <text
        xml:space="preserve"
        style="font-size:11.2889px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="1341.1929"
-       y="522.5144"
+       x="1716.3596"
+       y="463.56027"
        id="text4-9"><tspan
          sodipodi:role="line"
          id="tspan4-49"
          style="font-size:11.2889px;fill:#000000;stroke:none;stroke-width:2"
-         x="1341.1929"
-         y="522.5144">Sigarette</tspan></text>
+         x="1716.3596"
+         y="463.56027">Sigarette</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="1392.8101"
-       y="368.01373"
+       x="1767.9768"
+       y="309.0596"
        id="text4-0"><tspan
          sodipodi:role="line"
          id="tspan4-4"
          style="font-size:19.7556px;fill:#000000;stroke:none;stroke-width:2"
-         x="1392.8101"
-         y="368.01373">Sigarette</tspan></text>
+         x="1767.9768"
+         y="309.0596">Sigarette</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="1074.6323"
-       y="906.70752"
+       x="1556.4524"
+       y="877.37933"
        id="text4-0-9"><tspan
          sodipodi:role="line"
          id="tspan4-4-2"
          style="font-size:19.7556px;fill:#000000;stroke:none;stroke-width:2"
-         x="1074.6323"
-         y="906.70752">Sigarette</tspan></text>
+         x="1556.4524"
+         y="877.37933">Sigarette</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.488352;stroke-dasharray:none"
        id="rect1-3-2-9-9-65"
        width="168.26498"
        height="73.843307"
-       x="1703.1782"
-       y="233.4938"
+       x="2078.345"
+       y="174.53969"
        ry="5.565661" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.488352;stroke-dasharray:none"
        id="rect1-3-2-9-9-6-6"
        width="168.26498"
        height="73.843307"
-       x="1703.1782"
-       y="339.09564"
+       x="2078.345"
+       y="280.14151"
        ry="5.565661" />
     <text
        xml:space="preserve"
        style="font-size:41.8343px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:1.64702;stroke-dasharray:none"
-       x="2127.6028"
-       y="235.89082"
+       x="2587.3586"
+       y="187.78349"
        id="text1-9-0-2-3"
        transform="scale(0.81601311,1.2254705)"><tspan
          sodipodi:role="line"
          style="font-size:41.8343px;stroke-width:1.64702"
-         x="2127.6028"
-         y="235.89082"
+         x="2587.3586"
+         y="187.78349"
          id="tspan2-6-0-9">€ 50.00</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="1742.844"
-       y="384.96832"
+       x="2118.0107"
+       y="326.01419"
        id="text4-0-4"><tspan
          sodipodi:role="line"
          id="tspan4-4-8"
          style="font-size:19.7556px;fill:#000000;stroke:none;stroke-width:2"
-         x="1742.844"
-         y="384.96832">Sigarette</tspan></text>
+         x="2118.0107"
+         y="326.01419">Sigarette</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:2;stroke-dasharray:none"
@@ -543,79 +490,140 @@
        id="rect1-3-2-9-9-6-6-6"
        width="168.26498"
        height="73.843307"
-       x="1703.1782"
-       y="441.24899"
+       x="2078.345"
+       y="382.29489"
        ry="5.565661" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.244176;stroke-dasharray:none"
        id="rect1-3-2-9-9-6-6-6-5"
        width="84.132492"
        height="36.921654"
-       x="1739.2334"
-       y="597.46234"
+       x="2114.4001"
+       y="538.50824"
        ry="2.7828305" />
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="1742.844"
-       y="487.12167"
+       x="2118.0107"
+       y="428.16757"
        id="text4-0-4-3"><tspan
          sodipodi:role="line"
          id="tspan4-4-8-8"
          style="font-size:19.7556px;fill:#000000;stroke:none;stroke-width:2"
-         x="1742.844"
-         y="487.12167">Sigarette</tspan></text>
+         x="2118.0107"
+         y="428.16757">Sigarette</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:2;stroke-dasharray:none"
-       x="1757.6179"
-       y="623.28815"
+       x="2132.7847"
+       y="564.33405"
        id="text6"><tspan
          sodipodi:role="line"
          id="tspan6"
          style="stroke-width:2"
-         x="1757.6179"
-         y="623.28815">invia</tspan></text>
+         x="2132.7847"
+         y="564.33405">invia</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.244176;stroke-dasharray:none"
        id="rect1-3-2-9-9-6-6-6-5-5"
        width="84.132492"
        height="36.921654"
-       x="1079.9869"
-       y="1245.0562"
+       x="1561.807"
+       y="1215.7279"
        ry="2.7828305" />
     <text
        xml:space="preserve"
        style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:2;stroke-dasharray:none"
-       x="1098.3715"
-       y="1270.882"
+       x="1580.1915"
+       y="1241.5537"
        id="text6-4"><tspan
          sodipodi:role="line"
          id="tspan6-8"
          style="stroke-width:2"
-         x="1098.3715"
-         y="1270.882">invia</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
-       id="rect1-3-4-5-5"
-       width="168.06245"
-       height="83.884933"
-       x="175.4381"
-       y="1144.9235"
-       ry="6.3225112" />
+         x="1580.1915"
+         y="1241.5537">invia</tspan></text>
+    <g
+       id="g2"
+       transform="translate(415.08198,-10.387134)">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.75888;stroke-dasharray:none"
+         id="rect1-10"
+         width="313.46466"
+         height="514.18945"
+         x="102.73698"
+         y="801.11823"
+         ry="38.755093" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
+         id="rect1-3-4"
+         width="168.06245"
+         height="83.884933"
+         x="175.4381"
+         y="864.09149"
+         ry="6.3225112" />
+      <text
+         xml:space="preserve"
+         style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+         x="223.22343"
+         y="913.22528"
+         id="text1-4"><tspan
+           sodipodi:role="line"
+           id="tspan1-7"
+           style="font-size:19.7556px;stroke-width:2"
+           x="223.22343"
+           y="913.22528">Inserisci</tspan></text>
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
+         id="rect1-3-4-5"
+         width="168.06245"
+         height="83.884933"
+         x="175.4381"
+         y="1001.3915"
+         ry="6.3225112" />
+      <text
+         xml:space="preserve"
+         style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+         x="223.22343"
+         y="1050.5253"
+         id="text1-4-9"><tspan
+           sodipodi:role="line"
+           id="tspan1-7-6"
+           style="font-size:19.7556px;stroke-width:2"
+           x="223.22343"
+           y="1050.5253">Rapido</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:19.7556px;writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+         x="223.22337"
+         y="1194.0571"
+         id="text1-4-9-5"><tspan
+           sodipodi:role="line"
+           id="tspan1-7-6-9"
+           style="font-size:19.7556px;stroke-width:2"
+           x="223.22337"
+           y="1194.0571">Pannello </tspan></text>
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.520185;stroke-dasharray:none"
+         id="rect1-3-4-5-5"
+         width="168.06245"
+         height="83.884933"
+         x="175.4381"
+         y="1144.9235"
+         ry="6.3225112" />
+    </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:2.3;stroke-dasharray:none"
-       d="M 259.46932,864.09148 V 397.25613 l 276.18205,1e-5"
+       style="fill:none;stroke:#000000;stroke-width:2.13778;stroke-dasharray:none"
+       d="M 667.85007,853.65779 V 386.74132 l 238.5555,1e-5"
        id="path6"
        sodipodi:nodetypes="ccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2.3;stroke-dasharray:none"
-       d="m 253.55152,1227.1143 v 466.8354 h 276.1821"
+       d="m 676.71525,1218.7348 v 466.8354 h 276.1821"
        id="path6-3"
        sodipodi:nodetypes="ccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:2.3;stroke-dasharray:none"
-       d="m 343.66085,1051.7207 189.60597,-2.9626"
+       style="fill:none;stroke:#000000;stroke-width:3.03312;stroke-dasharray:none"
+       d="m 753.98067,1036.5808 257.74443,-3.7901"
        id="path7" />
   </g>
 </svg>
