@@ -56,7 +56,6 @@ async function login(username, password) {
     // 4. Se va tutto bene, FastAPI ci restituisce il token
     const dati = await response.json();
     console.log(dati)
-    console.log("Login riuscito! Ecco il token:", dati.access_token);
 
     /* // 5. Salviamo il token nel browser per usarlo dopo
     localStorage.setItem('mioTokenSegreto', dati.access_token);

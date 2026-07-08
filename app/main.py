@@ -58,7 +58,7 @@ models.Base.metadata.create_all(bind=engine)
 # ROUTES
 
 # AUTHORIZATION AND AUTHENTICATION ROUTES
-@app.post("/create_user", status_code=status.HTTP_201_CREATED, response_model=UserOut)
+@app.post("/api/create_user", status_code=status.HTTP_201_CREATED, response_model=UserOut)
 async def create_user(user: UserIn, db:db_dependency):
     """ It takes the information provided by the request-body and save the user on the db """
     
@@ -82,7 +82,7 @@ async def create_user(user: UserIn, db:db_dependency):
         )
 
 
-@app.post("/login", response_model= Token)
+@app.post("/api/login", response_model= Token)
 async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],db: db_dependency):
     """ it manages the login procedures. It takes the information by a module (not body-request, not headers)"""
     user = db.query(models.User).filter(models.User.username == form_data.username).first()
@@ -102,7 +102,7 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],db: d
     return {"access_token": access_token, "token_type": "bearer"}
 
 
-@app.get("/me", response_model=UserOut)
+@app.get("/api/me", response_model=UserOut)
 def get_me(current_user : current_user, db:db_dependency):
 
     #rember that current user is a sqlalchemy object containing the data of the user. The properties are the names of the column
@@ -126,7 +126,7 @@ def get_all_user(current_user: current_user, db:db_dependency):
 # OPERATIVES ROUTES
 
 # insert a expense record. Needs login
-@app.post("/insert_expense", response_model=ExpenseOut)
+@app.post("/api/insert_expense", response_model=ExpenseOut)
 def insert_expense(record: ExpenseRecord, current_user: current_user  ,db:db_dependency):
     
     if record is None:
@@ -151,7 +151,7 @@ def insert_expense(record: ExpenseRecord, current_user: current_user  ,db:db_dep
 
 
 # let user insert a custom default category. Needs login
-@app.post("/user/insert_custom_category", response_model=Category)
+@app.post("/api/user/insert_custom_category", response_model=Category)
 def insert_custom_category(record: Category, current_user: current_user  ,db:db_dependency):
     
     if record is None:
