@@ -9,7 +9,7 @@ import models
 from database import engine
 from database import db_dependency
 
-from schema import UserIn, ExpenseRecord, Token, UserOut, ExpenseOut
+from schema import UserIn, ExpenseRecord, Token, UserOut, ExpenseOut, Category
 
 from datetime import timedelta
 from fastapi.security import OAuth2PasswordRequestForm
@@ -57,9 +57,10 @@ models.Base.metadata.create_all(bind=engine)
 
 # ROUTES
 
-# users related routes
-@app.post("/create_user", status_code=status.HTTP_201_CREATED)
+# AUTHORIZATION AND AUTHENTICATION ROUTES
+@app.post("/create_user", status_code=status.HTTP_201_CREATED, response_model=UserOut)
 async def create_user(user: UserIn, db:db_dependency):
+    """ It takes the information provided by the request-body and save the user on the db """
     
     db_user = models.User(
         username = user.username,
@@ -71,9 +72,7 @@ async def create_user(user: UserIn, db:db_dependency):
         db.add(db_user)
         db.commit()
     
-        return {
-            "success": True,
-            "password_per_ricordarsela": user.plain_text_pwd}
+        return user
     except IntegrityError:
        
         db.rollback() 
@@ -85,10 +84,10 @@ async def create_user(user: UserIn, db:db_dependency):
 
 @app.post("/login", response_model= Token)
 async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],db: db_dependency):
-   
+    """ it manages the login procedures. It takes the information by a module (not body-request, not headers)"""
     user = db.query(models.User).filter(models.User.username == form_data.username).first()
     
-    
+    """ verify_password function is stored at auth.py """
     if not user or not verify_password(form_data.password, str(user.hashed_pwd)):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -110,7 +109,7 @@ def get_me(current_user : current_user, db:db_dependency):
     return current_user
 
 
-
+# ADMIN ROUTES
 @app.get("/get_all_user", response_model=list[UserOut])
 def get_all_user(current_user: current_user, db:db_dependency):
     
@@ -122,7 +121,11 @@ def get_all_user(current_user: current_user, db:db_dependency):
              raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail = "only admin can get all users")
 
 
-# insert an expense record
+
+
+# OPERATIVES ROUTES
+
+# insert a expense record. Needs login
 @app.post("/insert_expense", response_model=ExpenseOut)
 def insert_expense(record: ExpenseRecord, current_user: current_user  ,db:db_dependency):
     
@@ -144,3 +147,32 @@ def insert_expense(record: ExpenseRecord, current_user: current_user  ,db:db_dep
         return expense_record
     except Exception as e:
         raise e 
+    
+
+
+# let user insert a custom default category. Needs login
+@app.post("/user/insert_custom_category", response_model=Category)
+def insert_custom_category(record: Category, current_user: current_user  ,db:db_dependency):
+    
+    if record is None:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail="error in submitting record")
+
+    custom_category_record = models.DefaultCategoriesPerUser(
+         category_name = record.category_name,
+         id_user = current_user.id_user
+    )
+
+    try:    
+        db.add(custom_category_record)
+        db.commit()
+    
+        return record
+    except Exception as e:
+        raise e 
+
+# select custom cateogries for a specific user. Needs login
+@app.get("/user/retrieve_custom_categories", response_model=list[Category])
+def retrieve_custom_categories(current_user: current_user, db:db_dependency):
+     """ it retrieves the custom categories created by the user """
+     categories = db.query(models.DefaultCategoriesPerUser).filter(models.DefaultCategoriesPerUser.id_user == current_user.id_user).all()
+     return categories

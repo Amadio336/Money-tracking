@@ -21,5 +21,10 @@ class ExpenseRecords(Base):
     amount = Column(Float, nullable=False)
     when = Column(Date, nullable=False)
 
+class DefaultCategoriesPerUser(Base):
+    __tablename__ = "default_categories_per_user"
     
+    id_category = Column(Integer, primary_key=True, index=True, unique=True)
+    category_name = Column(String(255), nullable=False, unique=True)
+    id_user = Column(Integer, ForeignKey("users.id_user"), nullable=False)
     

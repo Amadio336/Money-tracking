@@ -22,6 +22,12 @@ class ExpenseOut(BaseModel):
     amount:float
     when: date
 
+class Category(BaseModel):
+    category_name: str
+
+
+   
+
 class Token(BaseModel):
     access_token:str
     token_type: str

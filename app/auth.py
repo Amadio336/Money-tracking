@@ -20,6 +20,7 @@ def hash_password(password:str)->str:
     return password_hash.hash(password)
 
 def verify_password(plain_password:str, hashed_password: str) -> bool: 
+    """ it take the plain_password and compares it to the hashed version stored in the db """
     return password_hash.verify(plain_password, hashed_password)
 
 
