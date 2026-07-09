@@ -31,9 +31,8 @@ app = FastAPI()
 # 1. Definisci la tua "Lista VIP" (le origini del tuo frontend)
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:5501", # Sostituisci questa con la porta su cui gira il tuo JS
-    # "http://localhost:8000", # Esempio
-    # "*", # NOTA: In fase di sviluppo puro puoi usare "*" per far entrare chiunque, ma in produzione è pericolosissimo.
+    "http://127.0.0.1:5501", 
+    "http://192.168.1.15:80"
 ]
 
 # 2. Aggiungi il buttafuori (Middleware) che controlla la lista VIP
