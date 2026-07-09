@@ -1,0 +1,5 @@
+{
+  "create_user": "http://83.228.242.118/api/create_user",
+  "login": "http://83.228.242.118/api/login"
+ 
+}
