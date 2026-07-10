@@ -29,5 +29,6 @@ class Category(BaseModel):
    
 
 class Token(BaseModel):
+    success:bool
     access_token:str
     token_type: str

@@ -98,7 +98,7 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],db: d
     access_token = create_access_token(data={"sub": user.username})
     
    
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"success": True, "access_token": access_token, "token_type": "bearer"}
 
 
 @app.get("/api/me", response_model=UserOut)

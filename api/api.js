@@ -2,7 +2,7 @@
 
 
 
- async function create_user(payload) {
+async function create_user(payload) {
     const completeUrl = routes.create_user
 
     try{    
@@ -31,6 +31,43 @@
 }
 
 
+async function login(username, password) {
+    const completeUrl = routes.login
+
+    const formData = new URLSearchParams();
+    formData.append('username', username);
+    formData.append('password', password);
+
+    try {
+        const response = await fetch(
+            completeUrl, 
+            {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: formData }
+        )
+
+        //TODO: to remove
+        console.log(response)
+
+        if (!response.ok) {
+        throw new Error('Credentials invalid or server unreachable');
+        }
+
+        const dati = await response.json();
+        console.log(dati)
+
+
+        localStorage.setItem('token', dati.access_token);
+
+        //create a custom EL to notify that login has succedeed
+        const loginEvent = new CustomEvent("loginSuccess")
+        document.dispatchEvent(loginEvent)
+
+    } catch (error) {
+    console.error("Errore durante il login:", error)}
+
+}
 
 
 
@@ -44,6 +81,6 @@
 
 
 
- export {create_user}
+ export {create_user, login}
  
  
