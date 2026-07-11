@@ -108,8 +108,10 @@ def get_me(current_user : current_user, db:db_dependency):
     return current_user
 
 
+
+
 # ADMIN ROUTES
-@app.get("/get_all_user", response_model=list[UserOut])
+@app.get("/api/get_all_user", response_model=list[UserOut])
 def get_all_user(current_user: current_user, db:db_dependency):
     
     
@@ -127,6 +129,7 @@ def get_all_user(current_user: current_user, db:db_dependency):
 # insert a expense record. Needs login
 @app.post("/api/insert_expense", response_model=ExpenseOut)
 def insert_expense(record: ExpenseRecord, current_user: current_user  ,db:db_dependency):
+    
     
     if record is None:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail="error in submitting record")

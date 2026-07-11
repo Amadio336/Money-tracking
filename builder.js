@@ -1,4 +1,5 @@
-import { create_user, login } from "./api/api.js";
+import { create_user, login, registerExpense } from "./api/api.js";
+import { get_current_date } from "./utils.js";
 
 const appRoot = document.getElementById("app-root")
 
@@ -8,6 +9,9 @@ function router(track) {
     }
     else if (track == "1a"){
        builder_1a()
+    }
+    else if (track == "1b"){
+      builder_1b()
     }
     else if (track == "2"){
         builder_2()
@@ -19,7 +23,10 @@ function router(track) {
        builder_3b()
     }
     else if (track == "3c"){
-       console.log("costruisco 3c")
+       builder_3c()
+    }
+    else if (track == "3d"){
+       builder_3d()
     }
     else if (track == "4a"){
          console.log("creo 4a")
@@ -61,8 +68,10 @@ function builder_0() {
      appRoot.innerHTML = template_0
 
      const loginButton = document.getElementById('login-button');
+     const registrationButton = document.getElementById("registration-button")
 
      loginButton.addEventListener("click", retrieveTrack )
+     registrationButton.addEventListener("click", retrieveTrack)
 }
 
 
@@ -114,6 +123,92 @@ function builder_1a() {
 
     
 }
+
+
+function builder_1b() {
+
+    const template_1b = `
+       <div id="main-container" class="container-xl bd">
+        <div class="row g-3 mb-4">
+            <div class="col-12 d-flex justify-content-center align-items-center bd">
+               <form id="registration-form">
+    
+                        <div>
+                            <label for="username-input-reg">Nome Utente:</label><br>
+                            <input 
+                                type="text" 
+                                id="username-input-reg" 
+                                name="username" 
+                                required 
+                                autocomplete="username"
+                            >
+                        </div>
+                        <br>
+
+                        <div>
+                            <label for="email-input-reg">Indirizzo Email:</label><br>
+                            <input 
+                                type="email" 
+                                id="email-input-reg" 
+                                name="email" 
+                                required 
+                                autocomplete="email"
+                            >
+                        </div>
+                        <br>
+
+                        <div>
+                            <label for="password-input-reg">Password:</label><br>
+                            <input 
+                                type="password" 
+                                id="password-input-reg" 
+                                name="password" 
+                                required 
+                                autocomplete="new-password"
+                            >
+                        </div>
+                        <br>
+
+                        <button type="button" id="submit-registration">Registrati</button>
+
+                    </form>
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <p> <strong>Nota:</strong> il login avverrà tramite username e password, si prega quindi di ricordarli. L'email serve solo per ricevere resoconti, mentre è insignificante per quanto
+                riguarda la procedura di login. <br> <strong>Al momento non è disponibile un'operazione di reset di nome utente e password</strong></p>
+            </div>  
+           
+        </div>
+        </div>
+    `
+
+    appRoot.innerHTML = template_1b
+
+    const usernameInputReg = document.getElementById('username-input-reg');
+    const emailInputReg = document.getElementById('email-input-reg');
+    const passwordInputReg = document.getElementById('password-input-reg');
+    const submitRegistration = document.getElementById('submit-registration');
+
+    
+
+    const createUserWrapper = async () =>{
+        const payload = {username:usernameInputReg.value, email:emailInputReg.value, plain_text_pwd:passwordInputReg.value}
+        const data = await create_user(payload)
+
+        if (data) {
+            const UserCreatedEvent = new CustomEvent("user-created")
+            document.dispatchEvent(UserCreatedEvent)
+
+            document.addEventListener("user-created", router("1a")) 
+
+        }
+
+
+    }
+    submitRegistration.addEventListener("click", createUserWrapper)
+    
+}
+
 
 function builder_2() {
 
@@ -194,7 +289,7 @@ function builder_3b() {
     <div id="main-container" class="container-xl bd">
     <div class="row">
         <div class="col-12 d-flex justify-content-center align-items-center bd">
-            <p id="amount-remember"> bho</p>  
+            <p class="remember" id="amount-remember"> bho</p>  
         </div>   
         <div class="col-12 d-flex justify-content-center align-items-center bd">
             <label for="expense-reason" class="me-2">Per quale motivo:</label>
@@ -231,8 +326,140 @@ function builder_3b() {
 
     mvTo3cButton.addEventListener("click", mvTo3c)
     backTo3aButton.addEventListener("click", retrieveTrack)
+}
+
+function builder_3c() {
+
+    const template_3c = `
+     <div id="main-container" class="container-xl bd">
+        <div class="row g-3 mb-4">
+            <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <p class="remember" id="amount-remember"></p>  
+                <p class="remember" id="reason-remember"></p>  
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <label for="expense-category" class="me-2">Categoria: </label>
+                <input type="text" id="expense-category">
+            </div>    
+            <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <button type="button" id="mv-to-3d" data-track="3d">Avanti</button>
+                <button type="button" id="back-to-3b" data-track="3b">Indietro</button>
+            </div>  
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-lg-3 category bd">Sigarette</div>
+            <div class="col-6 col-lg-3 category bd">Benzina</div>
+            <div class="col-6 col-lg-3 category bd">Svago</div>
+            <div class="col-6 col-lg-3 category bd">Macchina</div>
+            <div class="col-6 col-lg-3 category bd">Salute e Farmacia</div>
+            <div class="col-6 col-lg-3 category bd">Trasporti Pubblici</div>
+            <div class="col-6 col-lg-3 category bd">Ristoranti e Bar</div>
+            <div class="col-6 col-lg-3 category bd">Abbigliamento</div>
+            <div class="col-6 col-lg-3 category bd">Abbonamenti</div>
+            <div class="col-6 col-lg-3 category bd">Regali</div>
+            <div class="col-6 col-lg-3 category bd">Imprevisti</div>
+        </div>
+        </div>
+
+
+
+    `
+     appRoot.innerHTML=template_3c
+
+     const amountRememberPar = document.getElementById("amount-remember")
+     const reasonRememberPar = document.getElementById("reason-remember")
+     const expenseCategoryInput = document.getElementById("expense-category")
+     const mvTo3dButton = document.getElementById('mv-to-3d');
+     const backTo3bButton = document.getElementById('back-to-3b');
+
+    //they populate the <p> 
+    amountRememberPar.textContent = `€ ${interface3Data.amount}`
+    reasonRememberPar.textContent = `€ ${interface3Data.reason}`
+
+    if (interface3Data.category) expenseCategoryInput.value = interface3Data.category
+
+
+
+
+    const categories = document.querySelectorAll(".category")
+    const selectCategory = (e) => {
+        const cat = e.currentTarget.textContent
+        expenseCategoryInput.value = cat
+        interface3Data.category = cat
+        console.log(interface3Data)
+
+    }
+    categories.forEach(category =>{
+        category.addEventListener("click", selectCategory)
+    })
+     
+    const mvTo3d = (e) => {
+        const categoryValue  = expenseCategoryInput.value
+        if (!categoryValue=="")interface3Data.category = categoryValue
+        console.log(interface3Data)
+        const track = e.currentTarget.dataset.track
+        router(track)
+    }
+
+    mvTo3dButton.addEventListener("click", mvTo3d)
+    backTo3bButton.addEventListener("click", retrieveTrack)
+
+
 
 }
 
 
-export {router}
+function builder_3d() {
+
+    const template_3d = `
+    
+         <div id="main-container" class="container-xl bd">
+            <div class="row g-3 mb-4">
+             <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <p class="remember" id="amount-remember"></p>  
+                <p class="remember" id="reason-remember"></p>  
+                <p class="remember" id="category-remember"></p>  
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <button type="button" id="mv-to-2" data-track="2" class="mb-3">Avanti</button>
+                <button type="button" id="back-to-3c" data-track="3c" class="mb-3">Indietro</button>
+            </div>  
+         </div>
+        </div>
+
+    `
+    appRoot.innerHTML=template_3d
+
+    const amountRemember = document.getElementById('amount-remember');
+    const reasonRemember = document.getElementById('reason-remember');
+    const categoryRemember = document.getElementById('category-remember');
+    
+    amountRemember.textContent = interface3Data.amount
+    reasonRemember.textContent = interface3Data.reason
+    categoryRemember.textContent = interface3Data.category
+    
+    const SubmitExpenseRecord = document.getElementById("mv-to-2")
+    const backTo3cButton= document.getElementById("back-to-3c")
+
+
+    const today = get_current_date()
+    interface3Data.when = today
+
+
+    const registerEpenseWrapper = () => {registerExpense(interface3Data)}
+
+    SubmitExpenseRecord.addEventListener("click", registerEpenseWrapper)
+    backTo3cButton.addEventListener("click", retrieveTrack)
+
+    const mvTo2 = () => {
+        router("2")
+    }
+    document.addEventListener("expense-recorded", mvTo2)
+
+
+
+
+    
+}
+
+export {router, builder_0, builder_2}

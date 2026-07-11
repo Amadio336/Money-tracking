@@ -1,4 +1,4 @@
- import { routes } from "./load_json.js";
+import { routes } from "./load_json.js";
 
 
 
@@ -16,7 +16,10 @@ async function create_user(payload) {
         
 
         if (!response.ok) {
-            throw new Error(`Errore di rete: ${response.status}`)}
+            const errorDetails = await response.json();
+            console.error("Dettaglio dell'errore 422 da FastAPI:", JSON.stringify(errorDetails, null, 2));
+            throw new Error(`Errore di rete: ${response.status}`);
+        }
     
         if(response.status == 422){
             console.log("rivedi i dati inseriti")
@@ -24,7 +27,7 @@ async function create_user(payload) {
         }
             
         const data = await response.json();
-        console.log("Risposta dal server:", data);
+        return data
     
     } catch (error){
      console.error("Error - request failed: ", error)}
@@ -72,6 +75,43 @@ async function login(username, password) {
 
 
 
+async function registerExpense(payload) {
+    const completeUrl = routes.register_expense
+
+    try{    
+        const response = await fetch(
+            completeUrl, 
+            {
+                method: "POST",
+                headers:  {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}` 
+                },
+                body: JSON.stringify(payload)
+            }
+        )
+        
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            console.error("Dettaglio dell'errore 422 da FastAPI:", JSON.stringify(errorDetails, null, 2));
+            throw new Error(`Errore di rete: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log("Expense recorded succesfully", data)
+
+        const expenseRecordedEvent = new CustomEvent("expense-recorded")
+        document.dispatchEvent(expenseRecordedEvent)
+  
+    
+    } catch (error){
+     console.error("Error - request failed: ", error)}
+
+
+    
+
+}
 
 
 
@@ -81,6 +121,10 @@ async function login(username, password) {
 
 
 
- export {create_user, login}
+
+
+
+
+ export {create_user, login, registerExpense}
  
  
