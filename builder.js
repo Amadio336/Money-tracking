@@ -57,10 +57,10 @@ function builder_0() {
     const template_0 = `
     <div id="main-container" class="container-xl  bd">
         <div class="row">
-            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center bd">
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                 <button id="login-button" class="p-5 m-4" data-track="1a">Accedi</button>
             </div>
-            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center bd">
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
              <button id="registration-button" class="p-5 m-4" data-track="1b">Registrati</button>
             </div>  
         </div>
@@ -93,7 +93,7 @@ function builder_1a() {
         <input type="password" id="passwd-login-input" placeholder="Inserisci password">
         </div>
 
-        <button type="button" id="login-submitt-button" data-track = "2">Crea Utente</button>
+        <button type="button" id="login-submitt-button" data-track = "2"> Accedi</button>
         </form>
         <button id="to-0" data-track="0"> Indietro </button>
     </div>
@@ -133,9 +133,9 @@ function builder_1a() {
 function builder_1b() {
 
     const template_1b = `
-       <div id="main-container" class="container-xl bd">
+       <div id="main-container" class="container-xl">
         <div class="row g-3 mb-4">
-            <div class="col-12 d-flex justify-content-center align-items-center bd">
+            <div class="col-12 d-flex justify-content-center align-items-center">
                <form id="registration-form">
     
                         <div>

@@ -1,12 +1,703 @@
-  #app-root{
+#app-root{
             width: 100vw;
             height: 100vh;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border: 1px solid red;
+            padding: 40px;
         }
+#main-container{
+  width: 100%;
+  height: 100%;
+}
 
-.bd{border: 1px solid red;}
+
+
+button {
+    border: none;
+    border-radius: 50px; /* Rende i bottoni a forma di "pillola" */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transizione super fluida */
+}
+
+
+
+/* --- Bottone Accedi (Toni del Blu/Viola) --- */
+#login-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.2);
+}
+
+#login-button:hover {
+    transform: translateY(-5px); /* Solleva il bottone */
+    box-shadow: 0 12px 25px rgba(118, 75, 162, 0.4); /* Amplia l'ombra */
+}
+
+#login-button:active {
+    transform: translateY(-1px); /* Effetto click */
+}
+
+/* --- Bottone Registrati (Toni del Rosa/Pesca) --- */
+#registration-button {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    box-shadow: 0 4px 15px rgba(250, 112, 154, 0.2);
+}
+
+#registration-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(250, 112, 154, 0.4);
+}
+
+#registration-button:active {
+    transform: translateY(-1px);
+}
+
+
+/* 1b */
+
+/* --- Contenitore della Card (Form) --- */
+.registration {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Stessa ombra del contenitore principale */
+    padding: 3rem 2.5rem;
+    max-width: 400px; /* Mantiene il form compatto e leggibile */
+    margin: 2rem auto; /* Centra il box nella pagina */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+/* --- Intestazione --- */
+.registration h2 {
+    color: #333333;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* --- Layout del Form --- */
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Spazio uniforme tra i campi */
+    text-align: left; /* Allinea le label a sinistra */
+}
+
+/* --- Etichette (Label) --- */
+.registration label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* --- Campi di Input --- */
+.registration input[type="text"],
+.registration input[type="password"] {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px; /* Angoli ammorbiditi ma meno rotondi dei bottoni */
+    font-size: 1rem;
+    background-color: #f8fafc; /* Grigio chiarissimo quasi impercettibile */
+    box-sizing: border-box; /* Previene che il padding allarghi l'input */
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* --- Effetto Focus (Quando l'utente clicca sull'input) --- */
+.registration input[type="text"]:focus,
+.registration input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea; /* Richiama il blu del tuo bottone */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15); /* Anello luminoso azzurro */
+}
+
+/* --- Bottone di Invio (Coerente con il Login Blu/Viola) --- */
+#login-submitt-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50px; /* A pillola */
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-top: 1rem;
+}
+
+#login-submitt-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(118, 75, 162, 0.4);
+}
+
+#login-submitt-button:active {
+    transform: translateY(-1px);
+}
+
+/* --- Bottone "Indietro" (Stile secondario) --- */
+#to-0 {
+    background: transparent;
+    color: #764ba2; }
+
+
+
+/* 1b */
+
+/* --- Contenitore del Form di Registrazione --- */
+#registration-form {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Stessa ombra degli altri box */
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 450px; /* Leggermente più largo per accogliere la mail */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: left;
+}
+
+/* --- Etichette (Label) --- */
+#registration-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* --- Campi di Input --- */
+#registration-form input[type="text"],
+#registration-form input[type="email"],
+#registration-form input[type="password"] {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    margin-bottom: 0.5rem; /* Aiuta a distanziare, anche se hai i <br> */
+}
+
+/* --- Effetto Focus (Tema Rosa/Pesca) --- */
+#registration-form input:focus {
+    outline: none;
+    border-color: #fa709a; /* Richiama il rosa del bottone */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(250, 112, 154, 0.15); /* Anello luminoso rosa */
+}
+
+/* --- Bottone Invia Registrazione (Coerente con il tema) --- */
+#submit-registration {
+    width: 100%;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    box-shadow: 0 4px 15px rgba(250, 112, 154, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-top: 1.5rem;
+}
+
+#submit-registration:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(250, 112, 154, 0.4);
+}
+
+#submit-registration:active {
+    transform: translateY(-1px);
+}
+
+/* --- Stile per la Nota Informativa --- */
+.flex-column p {
+    background-color: #fff0f3; /* Sfondo leggermente rosato/caldo */
+    border-left: 5px solid #fa709a; /* Bordo laterale rosa per evidenziare */
+    padding: 1.5rem;
+    border-radius: 0 16px 16px 0;
+    color: #4a4a4a;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 500px; /* Tiene il testo compatto e leggibile */
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Evidenziamo bene le scritte "Nota:" e gli avvisi importanti */
+.flex-column p strong {
+    color: #d81b60; /* Un fucsia scuro che si fa notare ma resta nel tema */
+}
+
+/* 2 */
+/* --- Messaggio di Benvenuto (#whoami) --- */
+#whoami {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #333333;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* --- Stile Comune per i Bottoni del Menù --- */
+#insert, #quick, #panel {
+    width: 100%;
+    max-width: 320px; /* Mantiene i bottoni della stessa dimensione e non troppo larghi */
+    margin: 0.8rem 0; /* Spazio verticale tra i bottoni */
+    padding: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Effetto click comune a tutti */
+#insert:active, #quick:active, #panel:active {
+    transform: translateY(-1px);
+}
+
+
+/* --- 1. Bottone Inserisci (Tema Verde: Azione/Aggiunta) --- */
+#insert {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.2);
+}
+
+#insert:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 176, 155, 0.4);
+}
+
+
+/* --- 2. Bottone Rapido (Tema Arancio/Giallo: Velocità/Energia) --- */
+#quick {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+    box-shadow: 0 4px 15px rgba(252, 74, 26, 0.2);
+}
+
+#quick:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(252, 74, 26, 0.4);
+}
+
+
+/* --- 3. Bottone Pannello di Controllo (Tema Azzurro/Ciano: Impostazioni/Gestione) --- */
+#panel {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.2);
+}
+
+#panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
+}
+
+
+
+/* 3a */
+/* --- Titolo della Schermata --- */
+h3 {
+    color: #333333;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* --- Input dell'Importo Spesa (Molto Evidente) --- */
+#expense-amount {
+    width: 100%;
+    max-width: 300px; /* Non troppo largo, mantiene il numero compatto */
+    padding: 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 2.5rem; /* Font molto grande, dà soddisfazione scrivere la cifra */
+    font-weight: 700;
+    text-align: center; /* Centra il numero */
+    color: #333333;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem; /* Spazio prima dei bottoni */
+}
+
+/* Rimuove le freccettine (spinners) tipiche degli input numerici per un look più pulito */
+#expense-amount::-webkit-inner-spin-button, 
+#expense-amount::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+#expense-amount[type=number] {
+    -moz-appearance: textfield; /* Per Firefox */
+}
+
+/* --- Effetto Focus (Tema Verde: coerente con il tasto Inserisci) --- */
+#expense-amount:focus {
+    outline: none;
+    border-color: #00b09b; /* Verde del flusso "Inserisci" */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 176, 155, 0.15); /* Anello luminoso verde */
+}
+
+/* --- Bottoni (Container flessibile) --- */
+/* Aggiungiamo un po' di margine orizzontale per staccare i due bottoni */
+#mv-to-3b, #back-to-2 {
+    margin: 0 0.5rem;
+}
+
+/* --- Bottone Primario: Avanti (Tema Verde) --- */
+#mv-to-3b {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem; /* Più largo per dare importanza */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#mv-to-3b:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 176, 155, 0.4);
+}
+
+#mv-to-3b:active {
+    transform: translateY(-1px);
+}
+
+/* --- Bottone Secondario: Indietro --- */
+#back-to-2 {
+    background: transparent;
+    color: #888888; /* Grigio neutro per non rubare l'attenzione */
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#back-to-2:hover {
+    color: #555555; /* Diventa più scuro al passaggio del mouse */
+    text-decoration: underline;
+}
+
+
+/* 3b */
+/* --- Promemoria dell'Importo (.remember) --- */
+.remember {
+    background-color: #eafaf1; /* Verde chiarissimo e delicato */
+    color: #008f7a; /* Verde scuro per un ottimo contrasto e leggibilità */
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px; /* Forma a pillola che richiama i bottoni */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 10px rgba(0, 176, 155, 0.08); /* Ombra leggerissima */
+    display: inline-block; /* Mantiene lo sfondo aderente al testo */
+}
+
+/* --- Area di Input (Etichetta e Campo di Testo) --- */
+label[for="expense-reason"] {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #555555;
+    font-size: 1.1rem;
+    margin-bottom: 0; /* Annulla margini extra visto che sono affiancati */
+}
+
+#expense-reason {
+    width: 100%;
+    max-width: 350px; /* Abbastanza largo per descrizioni come "Cena in pizzeria" */
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+/* --- Effetto Focus (Sempre fedele al tema Verde) --- */
+#expense-reason:focus {
+    outline: none;
+    border-color: #00b09b;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 176, 155, 0.15);
+}
+
+/* --- Contenitore Bottoni --- */
+#mv-to-3c, #back-to-3a {
+    margin: 2rem 0.5rem 0 0.5rem; /* Margine superiore per staccarli dall'input */
+}
+
+/* --- Bottone Primario: Avanti (Tema Verde) --- */
+#mv-to-3c {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#mv-to-3c:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 176, 155, 0.4);
+}
+
+#mv-to-3c:active {
+    transform: translateY(-1px);
+}
+
+/* --- Bottone Secondario: Indietro --- */
+#back-to-3a {
+    background: transparent;
+    color: #888888;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#back-to-3a:hover {
+    color: #555555;
+    text-decoration: underline;
+}
+
+
+/* 3c */
+/* --- Promemoria (Quantità e Motivo) --- */
+/* Modificato leggermente per affiancarli in modo ordinato */
+.remember {
+    background-color: #eafaf1;
+    color: #008f7a;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem; /* Leggermente ridotto per non occupare troppo spazio in coppia */
+    margin: 1rem 0.5rem 2rem 0.5rem; /* Margine per distanziarli tra loro */
+    box-shadow: 0 2px 10px rgba(0, 176, 155, 0.08);
+    display: inline-block;
+}
+
+/* --- Area di Input Categoria --- */
+label[for="expense-category"] {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #555555;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+#expense-category {
+    width: 100%;
+    max-width: 350px;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+#expense-category:focus {
+    outline: none;
+    border-color: #00b09b; /* Tema Verde */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 176, 155, 0.15);
+}
+
+/* --- Bottoni Avanti / Indietro --- */
+#mv-to-3d, #back-to-3b {
+    margin: 1.5rem 0.5rem 2rem 0.5rem; /* Aggiunto margine sotto per staccarli dalla griglia */
+}
+
+#mv-to-3d {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#mv-to-3d:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 176, 155, 0.4);
+}
+
+#mv-to-3d:active {
+    transform: translateY(-1px);
+}
+
+#back-to-3b {
+    background: transparent;
+    color: #888888;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#back-to-3b:hover {
+    color: #555555;
+    text-decoration: underline;
+}
+
+/* --- Griglia delle Categorie Rapide (.category) --- */
+.category {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px; /* Stessa stondatura degli input per coerenza */
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #64748b; /* Grigio bluastro elegante */
+    cursor: pointer;
+    user-select: none; /* Evita che il testo si evidenzi di blu se l'utente clicca velocemente */
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px; /* Assicura che le card abbiano tutte una buona altezza, utile da mobile */
+}
+
+/* Effetto Hover sulle Categorie: Si illuminano di verde */
+.category:hover {
+    border-color: #00b09b;
+    color: #008f7a;
+    background-color: #f0fdf4; /* Verdino chiarissimo */
+    transform: translateY(-3px); /* Si sollevano leggermente */
+    box-shadow: 0 6px 12px rgba(0, 176, 155, 0.1);
+}
+
+/* Effetto Click sulle Categorie */
+.category:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 176, 155, 0.1);
+}
+
+/* 3d */
+/* --- Promemoria (Quantità, Motivo, Categoria) --- */
+/* Assicuriamoci che stiano bene anche affiancati per tre */
+.remember {
+    background-color: #eafaf1;
+    color: #008f7a;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem; /* Leggermente ridotti per non affollare la riga */
+    margin: 0.5rem; /* Margine uniforme su tutti i lati */
+    box-shadow: 0 2px 10px rgba(0, 176, 155, 0.08);
+    text-align: center;
+}
+
+/* Siccome i badge sono dentro un d-flex, assicuriamoci che possano andare a capo 
+   sui display dei cellulari senza schiacciarsi */
+.col-12.d-flex {
+    flex-wrap: wrap; 
+}
+
+/* --- Area Bottoni in Colonna --- */
+/* Rendiamo i bottoni larghi uguali per un look pulito e ordinato */
+#mv-to-2, #back-to-3c {
+    width: 100%;
+    max-width: 320px; 
+}
+
+/* --- Bottone Primario di Conferma (Avanti / Salva) --- */
+#mv-to-2 {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Il margine inferiore (mb-3) è già gestito dalla tua classe Bootstrap */
+}
+
+#mv-to-2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 176, 155, 0.4);
+}
+
+#mv-to-2:active {
+    transform: translateY(-1px);
+}
+
+/* --- Bottone Secondario (Indietro) - Adattato per la Colonna --- */
+#back-to-3c {
+    background: transparent;
+    color: #888888;
+    border: 2px solid #e2e8f0; /* Aggiunto un bordo per dargli "struttura" in verticale */
+    border-radius: 50px; /* Coerente con la forma a pillola dell'altro */
+    padding: 1rem;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#back-to-3c:hover {
+    color: #555555;
+    background-color: #f8fafc; /* Si scurisce leggermente lo sfondo al passaggio del mouse */
+    border-color: #cbd5e1;
+}
+
+#back-to-3c:active {
+    transform: translateY(-1px);
+}
