@@ -6,6 +6,9 @@
 #main-container{
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -700,4 +703,121 @@ label[for="expense-category"] {
 
 #back-to-3c:active {
     transform: translateY(-1px);
+}
+
+
+
+/* 4a */
+/* --- Scorciatoie / Categorie Rapide (Mobile-First con Gradiente) --- */
+.shortcut {
+    background: linear-gradient(135deg, #ff9f43 0%, #ff6b6b 100%); /* Gradiente aranciato/corallo */
+    border: none; /* Rimosso per un look più pulito col gradiente */
+    border-radius: 12px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #ffffff; /* Testo bianco per la massima leggibilità */
+    min-height: 70px;
+    max-width: 100px;
+    margin:20px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Effetto Touch (Feedback tattile per mobile) --- */
+.shortcut:active {
+    background: linear-gradient(135deg, #ff8c20 0%, #fa5252 100%); /* Si scurisce leggermente */
+    transform: scale(0.97); /* Rimpicciolisce appena il tasto sotto il dito */
+}
+
+
+
+/* 4b */
+/* --- Permette ai badge di andare a capo se non c'è spazio --- */
+.col-12.d-flex {
+    flex-wrap: wrap; 
+}
+
+/* --- Badge Verdi (Grandi ed essenziali) --- */
+.remember {
+    background-color: #d1fae5; /* Verde chiaro solido */
+    color: #047857; /* Verde scuro per contrasto */
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem; /* Testo bello grande */
+    margin: 0.5rem;
+}
+
+/* --- Base per i bottoni --- */
+#register-rapid-expense, #back-to-4a {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    border-radius: 30px;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    -webkit-tap-highlight-color: transparent; /* Niente flash blu al tocco */
+}
+
+/* --- Bottone INVIA (Arancione solido) --- */
+#register-rapid-expense {
+    background-color: #ff8c20;
+    color: white;
+    border: none;
+}
+
+#register-rapid-expense:active {
+    background-color: #e67d1c; /* Si scurisce al tocco */
+}
+
+/* --- Bottone INDIETRO (Semplice con bordo) --- */
+#back-to-4a {
+    background-color: transparent;
+    color: #64748b;
+    border: 2px solid #cbd5e1;
+}
+
+#back-to-4a:active {
+    background-color: #f1f5f9; /* Grigio chiarissimo al tocco */
+}
+
+
+
+/* 5a */
+/* --- Base per i bottoni del Pannello --- */
+#rapid-report, #back-to-2 {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    border-radius: 30px;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    -webkit-tap-highlight-color: transparent; /* Niente flash blu su mobile */
+}
+
+/* --- Bottone Resoconto (Tema Azzurro solido) --- */
+#rapid-report {
+    background-color: #0ea5e9; 
+    color: white;
+    border: none;
+}
+
+#rapid-report:active {
+    background-color: #0284c7; /* Si scurisce al tocco */
+}
+
+/* --- Bottone INDIETRO (Stile secondario coerente) --- */
+#back-to-2 {
+    background-color: transparent;
+    color: #64748b;
+    border: 2px solid #cbd5e1;
+}
+
+#back-to-2:active {
+    background-color: #f1f5f9;
 }

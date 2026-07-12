@@ -68,6 +68,9 @@ function builder_0() {
     `
      appRoot.innerHTML = template_0
 
+     const mainContainer = document.getElementById("main-container")
+     mainContainer.style.justifyContent = "center"
+
      const loginButton = document.getElementById('login-button');
      const registrationButton = document.getElementById("registration-button")
 
@@ -80,7 +83,7 @@ function builder_1a() {
 
     const template_1a = `
     
-    <div class="registration">
+    <div id="main-container" class="registration">
         <h2>Login</h2>
         <form id="login-form">
         <div>
@@ -99,6 +102,9 @@ function builder_1a() {
     </div>
     `
     appRoot.innerHTML = template_1a
+
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
     
     const formLogin = document.getElementById('login-form');
     const usernameLoginInput = document.getElementById('username-login-input');
@@ -135,6 +141,13 @@ function builder_1b() {
     const template_1b = `
        <div id="main-container" class="container-xl">
         <div class="row g-3 mb-4">
+
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <p> <strong>Nota:</strong> il login avverrà tramite username e password, si prega quindi di ricordarli. L'email serve solo per ricevere resoconti, mentre è insignificante per quanto
+                riguarda la procedura di login. <br> <strong>Al momento non è disponibile un'operazione di reset di nome utente e password</strong></p>
+            </div> 
+
+
             <div class="col-12 d-flex justify-content-center align-items-center">
                <form id="registration-form">
     
@@ -178,16 +191,16 @@ function builder_1b() {
 
                     </form>
             </div>   
-            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
-                <p> <strong>Nota:</strong> il login avverrà tramite username e password, si prega quindi di ricordarli. L'email serve solo per ricevere resoconti, mentre è insignificante per quanto
-                riguarda la procedura di login. <br> <strong>Al momento non è disponibile un'operazione di reset di nome utente e password</strong></p>
-            </div>  
+           
            
         </div>
         </div>
     `
 
     appRoot.innerHTML = template_1b
+
+    const mainContainer = document.getElementById("main-container")
+     mainContainer.style.justifyContent = "start"
 
     const usernameInputReg = document.getElementById('username-input-reg');
     const emailInputReg = document.getElementById('email-input-reg');
@@ -238,6 +251,9 @@ function builder_2() {
     `
 
     appRoot.innerHTML=template_2
+
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
     
 
     const insertButton = document.getElementById('insert');
@@ -272,7 +288,10 @@ function builder_3a() {
         </div>
     </div>
     `
-     appRoot.innerHTML=template_3a
+    appRoot.innerHTML=template_3a
+
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
 
     
     const mvTo3bButton = document.getElementById('mv-to-3b');
@@ -316,6 +335,9 @@ function builder_3b() {
     `
 
     appRoot.innerHTML=template_3b
+
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
 
     const amountRememberPar = document.getElementById("amount-remember")
     const expenseReasonInput = document.getElementById('expense-reason');
@@ -442,6 +464,9 @@ function builder_3d() {
     `
     appRoot.innerHTML=template_3d
 
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
+
     const amountRemember = document.getElementById('amount-remember');
     const reasonRemember = document.getElementById('reason-remember');
     const categoryRemember = document.getElementById('category-remember');
@@ -494,6 +519,9 @@ function builder_4a() {
     `
     appRoot.innerHTML = template_4a
 
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
+
     const checkout = (e) => {
         const idShortcut = e.currentTarget.dataset.id
         const payload = shortcuts[idShortcut][1]
@@ -542,6 +570,10 @@ function builder_4b(idShortcut, payload) {
     `
 
     appRoot.innerHTML = template_4b
+
+    const mainContainer = document.getElementById("main-container")
+    mainContainer.style.justifyContent = "center"
+
     
     const amountRemember = document.getElementById('amount-remember');
     const reasonRemember = document.getElementById('reason-remember');
@@ -576,7 +608,7 @@ function builder_5a() {
     
              <div id="main-container" class="container-xl bd">
             <div class="row g-3 mb-4">
-             <div class="col-12 d-flex justify-content-center align-items-center bd">
+             <div class="col-12 d-flex d-none justify-content-center align-items-center bd">
                 <button type="button" id="get_all_expense" class="mb-3">Recupera tutte le spese</button>
             </div>   
              <div class="col-12 d-flex justify-content-center align-items-center bd">
