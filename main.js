@@ -19,8 +19,8 @@ if (!jwt){
       
             if (response.ok) {
                 // it contains the username and email of the user whose jwt has been sent
-                const datiUtente = await response.json();
-                builder_2()
+                const data = await response.json();
+                builder_2(data)
             } else {
                 builder_0()
             }

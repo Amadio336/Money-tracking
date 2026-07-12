@@ -58,7 +58,7 @@ async function login(username, password) {
         }
 
         const dati = await response.json();
-        console.log(dati)
+  
 
 
         localStorage.setItem('token', dati.access_token);
@@ -66,6 +66,8 @@ async function login(username, password) {
         //create a custom EL to notify that login has succedeed
         const loginEvent = new CustomEvent("loginSuccess")
         document.dispatchEvent(loginEvent)
+
+        return "pene"
 
     } catch (error) {
     console.error("Errore durante il login:", error)}

@@ -3,7 +3,7 @@ import { get_current_date } from "./utils.js";
 
 const appRoot = document.getElementById("app-root")
 
-function router(track) {
+function router(track, data = null) {
     if (track == "0"){
         builder_0()
     }
@@ -14,7 +14,7 @@ function router(track) {
       builder_1b()
     }
     else if (track == "2"){
-        builder_2()
+        builder_2(data)
     }
     else if (track == "3a"){
         builder_3a()
@@ -47,7 +47,7 @@ const retrieveTrack = (e) => {
 
 
 
-const interface3Data = {}
+let interface3Data = {}
 
 
 
@@ -105,12 +105,15 @@ function builder_1a() {
     const submitLoginButton = document.getElementById('login-submitt-button');
     const backButtonTo0 = document.getElementById("to-0")
 
-    function signIn(){
+    const signIn = async function(){
         const username = usernameLoginInput.value
         const plain_text_pwd = passwordLoginInput.value
-        login(username, plain_text_pwd)
+        const data = await login(username, plain_text_pwd)
+        console.log("questo è ciò che ritorna la funzione login",data)      
+    
+        
     }
-
+    
     const routerTo2= ()=>{
         router("2")
     }
@@ -210,11 +213,15 @@ function builder_1b() {
 }
 
 
-function builder_2() {
+function builder_2(data) {
+    console.log("guarda qui", data)
 
     const template_2 = `
         <div id="main-container" class="container-xl  bd">
         <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center bd">
+               <p> Utente  </p>
+            </div>
             <div class="col-12 d-flex justify-content-center align-items-center bd">
                 <button type="button" id="insert" data-track="3a">Inserisci</button>
             </div>
@@ -452,6 +459,7 @@ function builder_3d() {
     backTo3cButton.addEventListener("click", retrieveTrack)
 
     const mvTo2 = () => {
+        interface3Data = {}
         router("2")
     }
     document.addEventListener("expense-recorded", mvTo2)
