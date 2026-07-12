@@ -13,7 +13,7 @@ from fastapi import Depends, HTTPException, status
 import models
 from main import db_dependency
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login") # *1
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/login") 
 
 
 def hash_password(password:str)->str:

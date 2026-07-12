@@ -16,12 +16,15 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.exc import IntegrityError
 
 from sqlalchemy import func
+from sqlalchemy import extract
 
 from auth import create_access_token, hash_password, oauth2_scheme, verify_access_token, verify_password #auth è il file auth.py
 
 from config import settings 
 
 from auth import current_user
+
+from utils.utils import get_report
 
 app = FastAPI()
 
@@ -186,3 +189,18 @@ def retrieve_custom_categories(current_user: current_user, db:db_dependency):
 def get_all_expense(current_user:current_user, db:db_dependency):
     expenses_by_user = db.query(models.ExpenseRecords).filter(models.ExpenseRecords.id_user == current_user.id_user).all()
     return expenses_by_user 
+
+
+@app.get("/api/get-report-by-month/{month}")
+def get_expenses_by_month(month: int, current_user: current_user, db: db_dependency):
+    
+
+    expenses_by_user = db.query(models.ExpenseRecords).filter(
+        models.ExpenseRecords.id_user == current_user.id_user,
+        extract('month', models.ExpenseRecords.when) == month  # NOTA: usa il nome corretto della tua colonna data (es. when, date, created_at)
+    ).all()
+    
+    report_by_cat = get_report(expenses_by_user)
+    return report_by_cat
+    
+    
