@@ -12,6 +12,21 @@ function get_current_date(){
     return `${anno}-${mese}-${giorno}`;
 };
 
-get_current_date()
+//get_current_date()
 
-export {get_current_date}
+
+const shortcuts = [["Delia", {amount:5, reason: "Delia", category: "Sigarette"}],
+                   ["Terea", {amount:5.5, reason: "Terea", category: "Sigarette"}],
+                   ["Caffè Sapienza", {amount:0.5, reason: "caffe", category: "svago"}],
+                   ["Carburante € 20", {amount:20, reason: "carburante € 20", category: "Carburante"}],
+                   ["Carburante € 10", {amount:10, reason: "carburante € 10", category: "Carburante"}],
+                   ["Rinnovo VPS", {amount: 5, reason: "Hosting server", category: "Tecnologia"}],
+                   ["Cena", {amount: 40, reason: "cena", category: "Svago"}],
+                   ["Ricarica", {amount: 10, reason: "ricarica", category: "abbonamenti"}],
+                  ]
+
+
+
+
+
+export {get_current_date, shortcuts}

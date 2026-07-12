@@ -173,8 +173,16 @@ def insert_custom_category(record: Category, current_user: current_user  ,db:db_
         raise e 
 
 # select custom cateogries for a specific user. Needs login
-@app.get("/user/retrieve_custom_categories", response_model=list[Category])
+@app.get("/api/user/retrieve_custom_categories", response_model=list[Category])
 def retrieve_custom_categories(current_user: current_user, db:db_dependency):
      """ it retrieves the custom categories created by the user """
      categories = db.query(models.DefaultCategoriesPerUser).filter(models.DefaultCategoriesPerUser.id_user == current_user.id_user).all()
      return categories
+
+
+
+# get all the expenses per user. Needs login
+@app.get("/api/get_all_expenses", response_model=list[ExpenseOut])
+def get_all_expense(current_user:current_user, db:db_dependency):
+    expenses_by_user = db.query(models.ExpenseRecords).filter(models.ExpenseRecords.id_user == current_user.id_user).all()
+    return expenses_by_user

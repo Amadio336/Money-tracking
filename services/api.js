@@ -1,5 +1,5 @@
 import { routes } from "./load_json.js";
-
+import { router, builder_0, builder_2 } from "../builder.js";
 
 
 async function create_user(payload) {
@@ -67,7 +67,7 @@ async function login(username, password) {
         const loginEvent = new CustomEvent("loginSuccess")
         document.dispatchEvent(loginEvent)
 
-        return "pene"
+        
 
     } catch (error) {
     console.error("Errore durante il login:", error)}
@@ -115,6 +115,74 @@ async function registerExpense(payload) {
 
 }
 
+const jwt = localStorage.getItem("token")
+async function get_me(jwt) {
+    if (!jwt){
+            builder_0()
+    }else{
+                try {
+                    const response = await fetch('http://83.228.242.118/api/me', {
+                        method: 'GET', 
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${jwt}` 
+                        }})
+
+            
+                    if (response.ok) {
+                        // it contains the username and email of the user whose jwt has been sent
+                        const data = await response.json();
+                        localStorage.setItem("username", data.username)
+                        builder_2()
+                    } else {
+                        builder_0()
+                    }
+
+            } catch (errore) {
+                console.warn("Errore durante la verifica del token:", errore.message);
+                localStorage.removeItem('jwt');
+            }
+        }
+
+    
+}
+
+async function getAllExpense() {
+    const completeUrl = routes.get_all_expenses
+    console.log("cosa c'è dietro ", completeUrl)
+    try{    
+        const response = await fetch(
+            completeUrl, 
+            {
+                method: "GET",
+                headers:  {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}` 
+                }
+            }
+        )
+        
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            console.error("Dettaglio", JSON.stringify(errorDetails, null, 2));
+            throw new Error(`Errore di rete: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log("Expense stored succesfully", data)
+        return data
+
+  
+    
+    } catch (error){
+     console.error("Error - request failed: ", error)}
+
+
+
+
+    
+}
 
 
 
@@ -124,9 +192,6 @@ async function registerExpense(payload) {
 
 
 
-
-
-
- export {create_user, login, registerExpense}
+ export {create_user, login, registerExpense, get_me, getAllExpense}
  
  

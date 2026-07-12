@@ -1,5 +1,6 @@
-import { create_user, login, registerExpense } from "./services/api.js";
-import { get_current_date } from "./utils.js";
+import { create_user, login, registerExpense, get_me, getAllExpense } from "./services/api.js";
+import { get_current_date, shortcuts } from "./utils.js";
+
 
 const appRoot = document.getElementById("app-root")
 
@@ -29,10 +30,10 @@ function router(track, data = null) {
        builder_3d()
     }
     else if (track == "4a"){
-         console.log("creo 4a")
+       builder_4a()
     }
     else if (track == "5a"){
-         console.log("creo 5a")
+      builder_5a()
     }
 }
 
@@ -109,12 +110,13 @@ function builder_1a() {
         const username = usernameLoginInput.value
         const plain_text_pwd = passwordLoginInput.value
         const data = await login(username, plain_text_pwd)
-        console.log("questo è ciò che ritorna la funzione login",data)      
+       
     
         
     }
     
     const routerTo2= ()=>{
+        get_me(localStorage.getItem("token"))
         router("2")
     }
 
@@ -213,14 +215,14 @@ function builder_1b() {
 }
 
 
-function builder_2(data) {
-    console.log("guarda qui", data)
+function builder_2() {
+  
 
     const template_2 = `
         <div id="main-container" class="container-xl  bd">
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center bd">
-               <p> Utente  </p>
+               <p id="whoami">   </p>
             </div>
             <div class="col-12 d-flex justify-content-center align-items-center bd">
                 <button type="button" id="insert" data-track="3a">Inserisci</button>
@@ -241,6 +243,9 @@ function builder_2(data) {
     const insertButton = document.getElementById('insert');
     const quickButton = document.getElementById('quick');
     const panelButton = document.getElementById('panel');
+    const whoamiPar = document.getElementById('whoami');
+
+    whoamiPar.textContent = `Ciao ${localStorage.getItem("username")}`
 
     insertButton.addEventListener("click", retrieveTrack)
     quickButton.addEventListener("click", retrieveTrack)
@@ -355,7 +360,7 @@ function builder_3c() {
         </div>
         <div class="row g-3">
             <div class="col-6 col-lg-3 category bd">Sigarette</div>
-            <div class="col-6 col-lg-3 category bd">Benzina</div>
+            <div class="col-6 col-lg-3 category bd">Carburante</div>
             <div class="col-6 col-lg-3 category bd">Svago</div>
             <div class="col-6 col-lg-3 category bd">Macchina</div>
             <div class="col-6 col-lg-3 category bd">Salute e Farmacia</div>
@@ -472,10 +477,130 @@ function builder_3d() {
 
 
 
+
+
+
+
 function builder_4a() {
 
+     const template_4a = `
+    
+         <div id="main-container" class="container-xl bd">
+            <div id="row-to-append" class="row g-3 mb-4">
+            
+         </div>
+        </div>
+
+    `
+    appRoot.innerHTML = template_4a
+
+    const checkout = (e) => {
+        const idShortcut = e.currentTarget.dataset.id
+        const payload = shortcuts[idShortcut][1]
+        builder_4b(idShortcut,payload)
+    }
+
+    /* this block (block 1) create in the DOM the shortctus and enables the EL*/
+    function createShortcut(where, sh, index) {
+        const col = document.createElement("div")
+        col.classList.add('col-6','col-lg-3', 'd-flex', 'justify-content-center', 'align-items-center','shortcut', 'bd')
+        col.textContent = sh[0]
+        col.dataset.id = index
+        where.appendChild(col)
+
+    
+        col.addEventListener("click", checkout)
+
+    }
+    
+    const rowToAppend = document.getElementById("row-to-append")
+    shortcuts.forEach((sh, index) => {
+        createShortcut(rowToAppend, sh, index)
+    })
+    /* end block 1 */
 
     
 }
+
+function builder_4b(idShortcut, payload) {
+        const template_4b = `
+    
+             <div id="main-container" class="container-xl bd">
+            <div class="row g-3 mb-4">
+             <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <p class="remember" id="amount-remember"></p>  
+                <p class="remember" id="reason-remember"></p>  
+                <p class="remember" id="category-remember"></p>  
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <button type="button" id="register-rapid-expense" data-track="2" class="mb-3">invia</button>
+                <button type="button" id="back-to-4a" data-track="4a" class="mb-3">Indietro</button>
+            </div>  
+         </div>
+        </div>
+    
+    `
+
+    appRoot.innerHTML = template_4b
+    
+    const amountRemember = document.getElementById('amount-remember');
+    const reasonRemember = document.getElementById('reason-remember');
+    const categoryRemember = document.getElementById('category-remember');
+
+    amountRemember.textContent = payload.amount
+    reasonRemember.textContent = payload.reason
+    categoryRemember.textContent = payload.category
+
+    const today = get_current_date()
+    payload.when = today
+
+    const registerRapidExpenseButton = document.getElementById("register-rapid-expense")
+    const backTo4aButton = document.getElementById("back-to-4a")
+
+    const registerRapidExpenseWrapper = () => {
+        registerExpense(payload)
+        builder_2()
+    }
+
+    registerRapidExpenseButton.addEventListener("click",registerRapidExpenseWrapper)
+    backTo4aButton.addEventListener("click", retrieveTrack)
+
+    
+}
+
+
+
+function builder_5a() {
+
+        const template_5a = `
+    
+             <div id="main-container" class="container-xl bd">
+            <div class="row g-3 mb-4">
+             <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <button type="button" id="get_all_expense" data-track="2" class="mb-3">invia</button>
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <button type="button" id="back-to-2" data-track="2" class="mb-3">Indietro</button>
+            </div>  
+         </div>
+        </div>
+    
+    `
+
+    appRoot.innerHTML = template_5a
+
+    const getAllExpensesButton = document.getElementById("get_all_expense")
+    const backTo2Butonn = document.getElementById("back-to-2")
+
+    const manageAllExpense = async () => {
+        const expensesByUser = await getAllExpense()
+        console.log(expensesByUser)
+    }
+
+    getAllExpensesButton.addEventListener("click", manageAllExpense)
+    backTo2Butonn.addEventListener("click", retrieveTrack)
+    
+}
+
 
 export {router, builder_0, builder_2}
