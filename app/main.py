@@ -185,4 +185,4 @@ def retrieve_custom_categories(current_user: current_user, db:db_dependency):
 @app.get("/api/get_all_expenses", response_model=list[ExpenseOut])
 def get_all_expense(current_user:current_user, db:db_dependency):
     expenses_by_user = db.query(models.ExpenseRecords).filter(models.ExpenseRecords.id_user == current_user.id_user).all()
-    return expenses_by_user
+    return expenses_by_user 

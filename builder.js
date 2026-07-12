@@ -577,7 +577,10 @@ function builder_5a() {
              <div id="main-container" class="container-xl bd">
             <div class="row g-3 mb-4">
              <div class="col-12 d-flex justify-content-center align-items-center bd">
-                <button type="button" id="get_all_expense" data-track="2" class="mb-3">invia</button>
+                <button type="button" id="get_all_expense" class="mb-3">Recupera tutte le spese</button>
+            </div>   
+             <div class="col-12 d-flex justify-content-center align-items-center bd">
+                <button type="button" id="rapid-report" class="mb-3">Resoconto Rapido</button>
             </div>   
             <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
                 <button type="button" id="back-to-2" data-track="2" class="mb-3">Indietro</button>
@@ -589,18 +592,72 @@ function builder_5a() {
 
     appRoot.innerHTML = template_5a
 
+    // get all expenses button
     const getAllExpensesButton = document.getElementById("get_all_expense")
     const backTo2Butonn = document.getElementById("back-to-2")
 
     const manageAllExpense = async () => {
         const expensesByUser = await getAllExpense()
-        console.log(expensesByUser)
+        builder_5b(expensesByUser)
     }
 
+    //get rapid report button
+    const getRapidRecordButton = document.getElementById("rapid-report")
+
+    
+
+    // back button
     getAllExpensesButton.addEventListener("click", manageAllExpense)
     backTo2Butonn.addEventListener("click", retrieveTrack)
     
 }
 
+
+function builder_5b(expenses) {
+    /* this function creates in the DOM the tabel with all the expenses */
+     const template_5b = `
+    
+             <div id="main-container" class="container-xl bd">
+            <div class="row g-3 mb-4">
+             <div id="expenses-container" class="col-12 d-flex flex-column justify-content-center align-items-center bd">
+               
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <button type="button" id="back-to-2" data-track="2" class="mb-3">Fatto</button>
+            </div>  
+         </div>
+        </div>
+    
+    `
+    appRoot.innerHTML = template_5b
+
+    
+    function createExpenseWidget(expense, where) {
+        const templateWidget = `
+        
+        <div class="expense-widget mb-5 mt-5">
+            <span style="display:block;" class="date-widget">${expense.when}</span>
+            <span style="display:block;" class="amount-widget">${expense.amount}</span>
+            <span style="display:block;" class="reason-widget">${expense.reason}</span>
+            <span style="display:block;" class="category-widget">${expense.category}</span>
+        </div>
+        
+        `
+    
+        where.insertAdjacentHTML('beforeend', templateWidget);
+    }
+
+    
+    const expensesContainer = document.getElementById("expenses-container")
+
+    expenses.forEach((expense)=>{createExpenseWidget(expense, expensesContainer)})
+
+
+     
+    const backTo2Butonn = document.getElementById("back-to-2")
+    backTo2Butonn.addEventListener("click", retrieveTrack)
+    
+    
+}
 
 export {router, builder_0, builder_2}
