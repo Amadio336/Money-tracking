@@ -170,7 +170,7 @@ async function getAllExpense() {
         }
         
         const data = await response.json();
-        console.log("Expense stored succesfully", data)
+        console.log("Expense stored successfully", data)
         return data
 
   
@@ -185,6 +185,40 @@ async function getAllExpense() {
 }
 
 
+async function generateReport(month) {
+    const completeUrl = `${routes.generate_report}${month}`
+   
+    try{    
+        const response = await fetch(
+            completeUrl, 
+            {
+                method: "GET",
+                headers:  {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}` 
+                }
+            }
+        )
+        
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            console.error("Dettaglio", JSON.stringify(errorDetails, null, 2));
+            throw new Error(`Errore di rete: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log("data stored successfully", data)
+        return data
+
+  
+    
+    } catch (error){
+     console.error("Error - request failed: ", error)}
+
+
+    
+}
 
 
 
@@ -192,6 +226,6 @@ async function getAllExpense() {
 
 
 
- export {create_user, login, registerExpense, get_me, getAllExpense}
+ export {create_user, login, registerExpense, get_me, getAllExpense, generateReport}
  
  

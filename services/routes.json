@@ -2,6 +2,7 @@
   "create_user": "http://83.228.242.118/api/create_user",
   "login": "http://83.228.242.118/api/login",
   "register_expense": "http://83.228.242.118/api/insert_expense",
-  "get_all_expenses": "http://83.228.242.118/api/get_all_expenses"
+  "get_all_expenses": "http://83.228.242.118/api/get_all_expenses",
+  "generate_report": "http://83.228.242.118/api/get-report-by-month/"
  
 }

@@ -1,4 +1,4 @@
-import { create_user, login, registerExpense, get_me, getAllExpense } from "./services/api.js";
+import { create_user, login, registerExpense, get_me, getAllExpense, generateReport } from "./services/api.js";
 import { get_current_date, shortcuts } from "./utils.js";
 
 
@@ -592,9 +592,10 @@ function builder_5a() {
 
     appRoot.innerHTML = template_5a
 
+    // back button
+    const backTo2Button = document.getElementById("back-to-2")
     // get all expenses button
     const getAllExpensesButton = document.getElementById("get_all_expense")
-    const backTo2Butonn = document.getElementById("back-to-2")
 
     const manageAllExpense = async () => {
         const expensesByUser = await getAllExpense()
@@ -604,11 +605,13 @@ function builder_5a() {
     //get rapid report button
     const getRapidRecordButton = document.getElementById("rapid-report")
 
+   
     
 
-    // back button
+   
     getAllExpensesButton.addEventListener("click", manageAllExpense)
-    backTo2Butonn.addEventListener("click", retrieveTrack)
+    getRapidRecordButton.addEventListener("click", builder_5c)
+    backTo2Button.addEventListener("click", retrieveTrack)
     
 }
 
@@ -657,6 +660,81 @@ function builder_5b(expenses) {
     const backTo2Butonn = document.getElementById("back-to-2")
     backTo2Butonn.addEventListener("click", retrieveTrack)
     
+    
+}
+
+
+
+function builder_5c() {
+    /* TODO: Note: this function takes in acocunt only the months, that means it generates the report given by a certain month. It does not care about the year, when you'll have so many 
+    records that they cover more yeasr, you have to change entirely the code (also the api > see main.py > get_report because it queries the db only for the months.) */
+
+    const template_5c = `
+
+        <div id="main-container" class="container-xl bd">
+            <div class="row g-3 mb-4">
+             <div class="col-12 d-flex justify-content-center align-items-center bd">
+            </div>   
+             <div class="col-12 d-flex justify-content-center align-items-center bd">
+             <select id="month-selector" class="form-select w-auto">
+                    <option value="" disabled selected>Scegli un mese...</option>
+                    <option value="1">Gennaio</option>
+                    <option value="2">Febbraio</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Aprile</option>
+                    <option value="5">Maggio</option>
+                    <option value="6">Giugno</option>
+                    <option value="7">Luglio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Settembre</option>
+                    <option value="10">Ottobre</option>
+                    <option value="11">Novembre</option>
+                    <option value="12">Dicembre</option>
+                </select>
+                            
+            </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+               <div class="report" id="space-for-report"> </div>
+            </div>  
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <button type="button" id="back-to-2" data-track="2" class="mb-3">Fatto</button>
+            </div>  
+         </div>
+        </div>
+
+
+    `
+
+    appRoot.innerHTML=template_5c
+
+
+    const spaceForReport = document.getElementById("space-for-report")
+    const monthSelect = document.getElementById("month-selector")
+
+    function generateReportWidget(report, where) {
+        for (const [categoria, importo] of Object.entries(report)) {
+
+            const newPar = document.createElement("p");
+            newPar.classList.add("category-report");
+            newPar.textContent = `${categoria}: ${importo} €`;
+            where.appendChild(newPar);
+
+        }
+    }
+
+
+    const generateReportWrapper = async (e) => {  
+        const monthSelected = e.target.value;
+        const report = await generateReport(monthSelected)
+        generateReportWidget(report, spaceForReport)
+    
+    }
+
+
+    monthSelect.addEventListener("change", generateReportWrapper)
+
+    const backTo2Butonn = document.getElementById("back-to-2")
+    backTo2Butonn.addEventListener("click", retrieveTrack)
     
 }
 
