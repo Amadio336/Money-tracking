@@ -3,7 +3,7 @@ async function caricaJson() {
         github repository */
     
     try{
-        const rawData = await fetch("/api/routes.json") 
+        const rawData = await fetch("/services/routes.json") 
         const data = await rawData.json()
         return await data
     }
