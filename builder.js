@@ -511,8 +511,15 @@ function builder_4a() {
      const template_4a = `
     
          <div id="main-container" class="container-xl bd">
-            <div id="row-to-append" class="row g-3 mb-4">
-            
+            <div class="row g-3 mb-4">
+                <div class="col-12 d-flex justify-content-center align-items-center bd">
+                    <div id="row-to-append" class="row g-3 mb-4">
+         
+                   </div>
+                </div>   
+            <div class="col-12 d-flex justify-content-center align-items-center bd flex-column">
+                <button type="button" id="back-to-2" data-track="2" class="mb-3">Indietro</button>
+            </div>  
          </div>
         </div>
 
@@ -546,6 +553,9 @@ function builder_4a() {
         createShortcut(rowToAppend, sh, index)
     })
     /* end block 1 */
+
+    const backTo2Butonn = document.getElementById("back-to-2")
+    backTo2Butonn.addEventListener("click", retrieveTrack)
 
     
 }

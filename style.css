@@ -23,6 +23,7 @@ button {
     color: white;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transizione super fluida */
+    margin-top:20px;
 }
 
 
@@ -363,10 +364,7 @@ h3 {
 }
 
 /* --- Bottoni (Container flessibile) --- */
-/* Aggiungiamo un po' di margine orizzontale per staccare i due bottoni */
-#mv-to-3b, #back-to-2 {
-    margin: 0 0.5rem;
-}
+
 
 /* --- Bottone Primario: Avanti (Tema Verde) --- */
 #mv-to-3b {
